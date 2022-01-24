@@ -6,5 +6,15 @@ main {
 }
 
 main div {
+    background-color: white;
     text-align: center;
+    height: 250px;
+    width: 275px;
+    border-radius: 30px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 8px #888888;
 }
