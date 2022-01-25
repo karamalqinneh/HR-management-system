@@ -86,15 +86,20 @@ let main = document.querySelector(".main-data");
 
 const idGenerator = (employee) => {
   let IdArray = employee.map((ele) => ele.employeeId);
-  for (let i = 0; i < IdArray.length; i++) {
-    if (IdArray[i] < 1000) {
-      employee[i].employeeId = Math.floor(Math.random() * (9999 - 1000) + 1000);
+  do {
+    for (let i = 0; i < IdArray.length; i++) {
+      if (IdArray[i] < 1000) {
+        employee[i].employeeId = Math.floor(
+          Math.random() * (9999 - 1000) + 1000
+        );
+      }
     }
-  }
+  } while (IdArray == [...new Set(IdArray)]);
 };
 
 Employee.prototype.render = function () {
   let div = document.createElement("div");
+  let childDiv = document.createElement("div");
   let employeeImage = document.createElement("img");
   let employeeName = document.createElement("h4");
   let employeeId = document.createElement("h4");
@@ -107,12 +112,13 @@ Employee.prototype.render = function () {
   employeeDepartment.textContent = `Department: ${this.department}`;
   employeeLevel.textContent = `Level: ${this.level}`;
   employeeSalary.textContent = `Net Salary: ${this.netSalary}`;
+  childDiv.appendChild(employeeId);
+  childDiv.appendChild(employeeName);
+  childDiv.appendChild(employeeLevel);
+  childDiv.appendChild(employeeDepartment);
+  childDiv.appendChild(employeeSalary);
   div.appendChild(employeeImage);
-  div.appendChild(employeeName);
-  div.appendChild(employeeId);
-  div.appendChild(employeeDepartment);
-  div.appendChild(employeeLevel);
-  div.appendChild(employeeSalary);
+  div.appendChild(childDiv);
   div.classList.add("employee-card");
   return div;
 };
