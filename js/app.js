@@ -37,35 +37,29 @@ employees = [
     "Tamara Ayoub",
     "Marketing",
     "Senior",
-    "../assets/Tamara.jpg"
+    "./assets/Tamara.jpg"
   ),
-  new Employee(
-    1004,
-    "Omar Zaid",
-    "Development",
-    "Senior",
-    "../assets/Omar.jpg"
-  ),
+  new Employee(1004, "Omar Zaid", "Development", "Senior", "./assets/Omar.jpg"),
   new Employee(
     1003,
     "Safi Walid",
     "Administration",
     "Mid-Senior",
-    "../assets/Safi.jpg"
+    "./assets/Safi.jpg"
   ),
   new Employee(
     1005,
     "Rana Saleh",
     "Development",
     "Junior",
-    "../assets/Rana.jpg"
+    "./assets/Rana.jpg"
   ),
   new Employee(
     1006,
     "Hadi Ahmad",
     "Finance",
     "Mid-Senior",
-    "../assets/Hadi.jpg"
+    "./assets/Hadi.jpg"
   ),
 ];
 
