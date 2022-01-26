@@ -1,9 +1,10 @@
 main {
   display: flex;
+  height: 75vh;
 }
 
 main form {
-  height: 100vh;
+  height: 75vh;
   width: 40%;
   display: flex;
   justify-content: center;
@@ -20,7 +21,7 @@ main form {
 }
 
 .form-input label {
-  width: 30%;
+  width: 41%;
 }
 
 .form-input input,
@@ -49,8 +50,11 @@ select {
 
 .main-data {
   width: 60%;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
+  overflow: scroll;
+  margin: 0;
 }
 
 .main-data .employee-card {
