@@ -29,9 +29,9 @@ employees = [
     "Ghazi Samer",
     "Administration",
     "Senior",
-    "../assets/Ghazi.jpg"
+    "./assets/Ghazi.jpg"
   ),
-  new Employee(1001, "Lana Ali", "Finance", "Senior", "../assets/Lana.jpg"),
+  new Employee(1001, "Lana Ali", "Finance", "Senior", "./assets/Lana.jpg"),
   new Employee(
     1002,
     "Tamara Ayoub",
@@ -139,6 +139,20 @@ submit.addEventListener("click", (event) => {
 });
 
 // renderedData = [...employees, ...getLocalStorageData()];
+let filteredData = (event) => {
+  main.innerHTML = "";
+  getLocalStorageData()
+    .filter((ele) => ele.department == event.target.value)
+    .forEach((ele) => {
+      main.appendChild(ele.render());
+    });
+
+  event.target.value == "All"
+    ? getLocalStorageData().forEach((ele) => {
+        main.appendChild(ele.render());
+      })
+    : "";
+};
 
 getLocalStorageData().forEach((ele) => {
   main.appendChild(ele.render());
